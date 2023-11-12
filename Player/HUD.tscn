@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://hj0lanaxubde"]
+
+[ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="1_5xnaw"]
+[ext_resource type="Script" path="res://Player/HUD.gd" id="1_ecv5k"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ecv5k")
+
+[node name="HealthLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_right = 145.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme = ExtResource("1_5xnaw")
+theme_override_font_sizes/font_size = 32
+text = "HealthLabel"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b2uy38s86fu5v"]
+
+[ext_resource type="FontFile" uid="uid://bbt1kbhtvaa0t" path="res://Theme/PixelIntv-OPxd.ttf" id="1_acbr5"]
+
+[resource]
+default_font = ExtResource("1_acbr5")
+Fonts/fonts/large = ExtResource("1_acbr5")
+Fonts/fonts/normal = ExtResource("1_acbr5")

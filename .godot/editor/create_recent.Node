@@ -1,0 +1,16 @@
+Button
+Label
+CanvasLayer
+ColorRect
+TileMap
+Panel
+CollisionShape2D
+Area2D
+StaticBody2D
+CharacterBody2D
+Node
+RigidBody2D
+StaticBody3D
+RichTextLabel
+Camera2D
+AnimatedSprite2D
