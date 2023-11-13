@@ -1,1 +1,2 @@
-res://Player/HUD.gd
+res://GlobalScripts/Game.gd
+res://Scenes/Main/Main.tscn

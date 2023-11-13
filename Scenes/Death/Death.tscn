@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b24556k50wamc"]
+
+[ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="1_l27x7"]
+[ext_resource type="Script" path="res://Scenes/Death/Death.gd" id="1_p40n7"]
+
+[node name="Death" type="Node2D"]
+script = ExtResource("1_p40n7")
+
+[node name="MainMenu" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 384.0
+offset_bottom = 176.0
+theme = ExtResource("1_l27x7")
+theme_override_font_sizes/font_size = 26
+text = "Main Menu"
+
+[node name="Wasted" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 254.0
+offset_bottom = 117.0
+size_flags_horizontal = 4
+theme = ExtResource("1_l27x7")
+theme_override_font_sizes/font_size = 42
+text = "wasted."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
