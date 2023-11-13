@@ -1,7 +1,8 @@
-Button
 Label
-CanvasLayer
+Button
 ColorRect
+ReferenceRect
+CanvasLayer
 TileMap
 Panel
 CollisionShape2D

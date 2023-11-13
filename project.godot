@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Theme/SplashImg.png"
 
+[autoload]
+
+Game="*res://GlobalScripts/Game.gd"
+
 [display]
 
 window/size/viewport_width=1440

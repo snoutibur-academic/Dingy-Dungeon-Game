@@ -7,4 +7,4 @@ func _ready():
 
 # Called every frame. ' delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$HealthLabel.text = "Hi mom"
+	$HealthLabel.text = "HP: " + str(Game.playerHP) + " / " + str(Game.playerMaxHP)
