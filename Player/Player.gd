@@ -3,26 +3,27 @@ extends CharacterBody2D
 @export var move_speed = 150
 @onready var anim = $AnimatedSprite2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	# anim.play("idle")
 	pass
 
 func _physics_process(delta):
-	# -- Get input direction --
+	"Player movement"
+	# Get player movement direction.
 	var inDir = Vector2 (
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
-	# -- Velocity Update --
+	# Velocity Update
 	velocity = inDir * move_speed
 	move_and_slide()
 
-	# Death™
+	"Death"
 	if Game.playerHP <= 0:
 		queue_free()
 		get_tree().change_scene_to_file("res://Scenes/Death/Death.tscn")
 
+	"Animation"
 	# # -- Animate --
 	# if inDir == -1:
 	# 	anim.flip_h = true

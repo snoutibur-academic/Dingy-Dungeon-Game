@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	Game.room = "TstLvl"
 
-# Debug/Test Hurt Button
+"Debug/Test Hurt Button"
 func _on_hurt_me_pressed():
 	print("Debug Hurt pressed.")
 	Game.playerHP -= 10

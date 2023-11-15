@@ -14,7 +14,7 @@ size = Vector2(417, 11.5)
 size = Vector2(14, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_378ev"]
-size = Vector2(14, 179)
+size = Vector2(14, 181.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjuu5"]
 size = Vector2(163.75, 22.75)
@@ -94,7 +94,7 @@ position = Vector2(-89, -12)
 shape = SubResource("RectangleShape2D_8eshy")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StartAreaBounds"]
-position = Vector2(-6, -74)
+position = Vector2(-4.75, -74)
 rotation = -1.57079
 shape = SubResource("RectangleShape2D_378ev")
 
@@ -121,9 +121,9 @@ position = Vector2(0, -55.5)
 shape = SubResource("RectangleShape2D_k3in8")
 
 [node name="SettingsLabel" type="Label" parent="Settings"]
-offset_left = -83.0
+offset_left = -87.0
 offset_top = -65.0
-offset_right = 82.0
+offset_right = 86.0
 offset_bottom = -45.0
 theme = ExtResource("2_ngmpq")
 theme_override_font_sizes/font_size = 11
