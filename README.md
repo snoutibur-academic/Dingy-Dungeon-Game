@@ -1,2 +1,4 @@
 # dingus (Name has yet to be determined)
-Game made for Game Dev Fund.
+A rouguelike game.
+
+You read the read me!

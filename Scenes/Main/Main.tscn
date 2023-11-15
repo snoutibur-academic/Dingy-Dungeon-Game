@@ -1,45 +1,58 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2758mxkkjegq"]
+[gd_scene load_steps=10 format=3 uid="uid://c2758mxkkjegq"]
 
 [ext_resource type="Script" path="res://Scenes/Main/MainScene.gd" id="1_fobvs"]
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="2_ngmpq"]
 [ext_resource type="PackedScene" uid="uid://r4cyijexe6ga" path="res://Player/Player.tscn" id="3_thvi0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yps31"]
-size = Vector2(591.938, 11.5)
+size = Vector2(415, 37.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dmtf"]
 size = Vector2(417, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8eshy"]
-size = Vector2(14, 98)
+size = Vector2(14, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_378ev"]
+size = Vector2(14, 179)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjuu5"]
 size = Vector2(163.75, 22.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3in8"]
+size = Vector2(164, 25)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fobvs")
 
 [node name="Title" type="Label" parent="."]
-offset_left = -354.0
+offset_left = -360.0
 offset_top = -49.0
-offset_right = -100.0
+offset_right = -96.0
 offset_bottom = 19.0
 theme = ExtResource("2_ngmpq")
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 36
-text = "Game Name"
+text = "Dingus."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Subtitle" type="Label" parent="Title"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 49.0
-offset_right = 235.0
-offset_bottom = 95.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.61
+anchor_right = 0.5
+anchor_bottom = 0.61
+offset_left = -132.0
+offset_top = 17.52
+offset_right = 131.0
+offset_bottom = 47.52
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_ngmpq")
 theme_override_font_sizes/font_size = 12
-text = "Subtitle"
+text = "Because yes."
 horizontal_alignment = 1
 
 [node name="TutorialLabel" type="Label" parent="."]
@@ -69,7 +82,7 @@ metadata/_edit_lock_ = true
 [node name="StartAreaBounds" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartAreaBounds"]
-position = Vector2(201.031, -49)
+position = Vector2(289.5, -62.125)
 shape = SubResource("RectangleShape2D_yps31")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StartAreaBounds"]
@@ -77,8 +90,13 @@ position = Vector2(289.5, 39)
 shape = SubResource("RectangleShape2D_4dmtf")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StartAreaBounds"]
-position = Vector2(-89, -5)
+position = Vector2(-89, -12)
 shape = SubResource("RectangleShape2D_8eshy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StartAreaBounds"]
+position = Vector2(-6, -74)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_378ev")
 
 [node name="StartPlayerDetection" type="Area2D" parent="."]
 
@@ -93,6 +111,22 @@ offset_right = 84.0
 offset_bottom = 55.0
 theme = ExtResource("2_ngmpq")
 text = "v Start Game v"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings"]
+position = Vector2(0, -55.5)
+shape = SubResource("RectangleShape2D_k3in8")
+
+[node name="SettingsLabel" type="Label" parent="Settings"]
+offset_left = -83.0
+offset_top = -65.0
+offset_right = 82.0
+offset_bottom = -45.0
+theme = ExtResource("2_ngmpq")
+theme_override_font_sizes/font_size = 11
 horizontal_alignment = 1
 vertical_alignment = 1
 

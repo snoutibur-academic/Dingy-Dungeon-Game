@@ -1,15 +1,11 @@
 extends CharacterBody2D
 
-@export var move_speed = 100
+@export var move_speed = 150
 @onready var anim = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# anim.play("idle")
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
 
 func _physics_process(delta):
@@ -32,7 +28,6 @@ func _physics_process(delta):
 	# 	anim.flip_h = true
 	# elif inDir == 1:
 	# 	anim.flip_h = false
-
 
 func death():
 	pass

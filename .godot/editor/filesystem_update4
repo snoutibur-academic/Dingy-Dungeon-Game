@@ -1,2 +1,12 @@
-res://GlobalScripts/Game.gd
+res://Scenes/World/StartRoom.tscn
+res://Theme/Main.tres
+res://Scenes/World/DebugLevel.tscn
+res://Scenes/Main/MainScene.gd
 res://Scenes/Main/Main.tscn
+res://Player/Player.tscn
+res://README.md
+res://Scenes/World/DebugLevel.gd
+res://GlobalScripts/Game.gd
+res://Player/Player.gd
+res://Scenes/Levels/DebugLevel.gd
+res://Player/HUD.tscn
