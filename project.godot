@@ -19,6 +19,7 @@ boot_splash/image="res://Theme/SplashImg.png"
 [autoload]
 
 Game="*res://GlobalScripts/Game.gd"
+Utils="*res://GlobalScripts/Utils.gd"
 
 [display]
 

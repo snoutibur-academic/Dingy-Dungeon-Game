@@ -24,4 +24,22 @@ offset_bottom = 69.0
 theme = ExtResource("5_0t6ni")
 text = "(debug) Hurt"
 
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 88.0
+offset_right = 206.0
+offset_bottom = 123.0
+theme = ExtResource("5_0t6ni")
+text = "(debug) save"
+
+[node name="AddMoney" type="Button" parent="."]
+offset_left = 35.0
+offset_top = 129.0
+offset_right = 208.0
+offset_bottom = 164.0
+theme = ExtResource("5_0t6ni")
+text = "{debug} $++"
+
 [connection signal="pressed" from="HurtMe" to="." method="_on_hurt_me_pressed"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="AddMoney" to="." method="_on_add_money_pressed"]

@@ -19,8 +19,12 @@ size = Vector2(14, 181.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjuu5"]
 size = Vector2(163.75, 22.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3in8"]
-size = Vector2(164, 25)
+[sub_resource type="GDScript" id="GDScript_f11wq"]
+script/source = "extends Label
+
+func _process(delta):
+	self.text = \"$\" + str(Game.money)
+"
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fobvs")
@@ -114,20 +118,15 @@ text = "v Start Game v"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Settings" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings"]
-position = Vector2(0, -55.5)
-shape = SubResource("RectangleShape2D_k3in8")
-
-[node name="SettingsLabel" type="Label" parent="Settings"]
-offset_left = -87.0
-offset_top = -65.0
-offset_right = 86.0
-offset_bottom = -45.0
+[node name="CurrencyDisplay" type="Label" parent="."]
+offset_left = -68.0
+offset_top = 170.0
+offset_right = 69.0
+offset_bottom = 196.0
 theme = ExtResource("2_ngmpq")
-theme_override_font_sizes/font_size = 11
+text = "{currencyDisplay}"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = SubResource("GDScript_f11wq")
 
 [connection signal="body_entered" from="StartPlayerDetection" to="." method="_on_start_player_detection_body_entered"]
