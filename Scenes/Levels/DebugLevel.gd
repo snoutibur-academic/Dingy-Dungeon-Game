@@ -2,6 +2,7 @@ extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
+"Sets current level"
 func _ready():
 	Game.room = "TstLvl"
 
