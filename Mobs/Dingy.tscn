@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cftxhxs5d7qr4"]
 
-[ext_resource type="Script" path="res://Mobs/MobBody.gd" id="1_m4uao"]
+[ext_resource type="Script" path="res://Mobs/Dingy.gd" id="1_01lvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfl56"]
 size = Vector2(28, 27)
@@ -11,13 +11,11 @@ size = Vector2(32, 32)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud4sb"]
 radius = 69.4622
 
-[node name="Dingy" type="Node2D"]
+[node name="Dingy" type="CharacterBody2D"]
+script = ExtResource("1_01lvh")
 
-[node name="MobBody" type="CharacterBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
-script = ExtResource("1_m4uao")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MobBody"]
 shape = SubResource("RectangleShape2D_rfl56")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -37,5 +35,5 @@ shape = SubResource("RectangleShape2D_13x0u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_ud4sb")
 
-[connection signal="body_entered" from="PlayerDetection" to="MobBody" method="_on_player_detection_body_entered"]
-[connection signal="body_exited" from="PlayerDetection" to="MobBody" method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

@@ -31,8 +31,8 @@ script = ExtResource("1_fobvs")
 
 [node name="Title" type="Label" parent="."]
 offset_left = -360.0
-offset_top = -49.0
-offset_right = -96.0
+offset_top = -34.0
+offset_right = -143.0
 offset_bottom = 19.0
 theme = ExtResource("2_ngmpq")
 theme_type_variation = &"HeaderLarge"
