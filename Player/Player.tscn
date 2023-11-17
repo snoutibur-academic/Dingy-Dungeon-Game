@@ -33,20 +33,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuxxc"]
-size = Vector2(34, 44)
+size = Vector2(16, 21)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_x6use")
-move_speed = 125
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.38419e-07, 4.76837e-07)
-scale = Vector2(0.0536913, 0.0536913)
+scale = Vector2(0.0246085, 0.0246085)
 sprite_frames = SubResource("SpriteFrames_b55vp")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_kuxxc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(7, 7)
