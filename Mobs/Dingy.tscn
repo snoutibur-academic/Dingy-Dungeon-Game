@@ -3,26 +3,27 @@
 [ext_resource type="Script" path="res://Mobs/Dingy.gd" id="1_01lvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfl56"]
-size = Vector2(28, 27)
+size = Vector2(18, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13x0u"]
-size = Vector2(32, 32)
+size = Vector2(22, 22)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud4sb"]
 radius = 69.4622
 
 [node name="Dingy" type="CharacterBody2D"]
 script = ExtResource("1_01lvh")
+moveSpeed = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rfl56")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -14.0
-offset_top = -13.0
-offset_right = 14.0
-offset_bottom = 15.0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 9.0
+offset_bottom = 10.0
 
 [node name="AttackArea" type="Area2D" parent="."]
 

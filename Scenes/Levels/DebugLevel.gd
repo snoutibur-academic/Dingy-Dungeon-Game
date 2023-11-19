@@ -1,9 +1,7 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-"Sets current level"
 func _ready():
-	Game.room = "TstLvl"
+	Game.room = "TstLvl" # Set current level / ID's the level.
 
 "Debug/Test Hurt Button"
 func _on_hurt_me_pressed():
