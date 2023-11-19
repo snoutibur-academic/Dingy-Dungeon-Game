@@ -191,6 +191,8 @@ theme = ExtResource("2_ngmpq")
 theme_override_font_sizes/font_size = 24
 text = "It looks like you have a save file."
 
+[node name="Settings" type="CanvasLayer" parent="."]
+
 [connection signal="body_entered" from="StartPlayerDetection" to="." method="_on_start_player_detection_body_entered"]
 [connection signal="pressed" from="LoadSave/ColorRect/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="LoadSave/ColorRect/NoLoadButton" to="." method="_on_no_load_button_pressed"]

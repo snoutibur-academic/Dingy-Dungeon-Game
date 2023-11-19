@@ -13,7 +13,6 @@ radius = 69.4622
 
 [node name="Dingy" type="CharacterBody2D"]
 script = ExtResource("1_01lvh")
-moveSpeed = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -36,5 +35,7 @@ shape = SubResource("RectangleShape2D_13x0u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_ud4sb")
 
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

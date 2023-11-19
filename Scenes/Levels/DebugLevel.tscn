@@ -40,14 +40,6 @@ position = Vector2(78, -26)
 
 [node name="HUD" parent="." instance=ExtResource("4_pq4yi")]
 
-[node name="HurtMe" type="Button" parent="."]
-offset_left = 33.0
-offset_top = 34.0
-offset_right = 206.0
-offset_bottom = 69.0
-theme = ExtResource("5_0t6ni")
-text = "(debug) Hurt"
-
 [node name="SaveButton" type="Button" parent="."]
 offset_left = 33.0
 offset_top = 88.0
@@ -64,6 +56,5 @@ offset_bottom = 164.0
 theme = ExtResource("5_0t6ni")
 text = "{debug} $++"
 
-[connection signal="pressed" from="HurtMe" to="." method="_on_hurt_me_pressed"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="AddMoney" to="." method="_on_add_money_pressed"]
