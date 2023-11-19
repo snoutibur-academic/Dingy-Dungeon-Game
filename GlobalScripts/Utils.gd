@@ -18,15 +18,12 @@ func saveGame():
 	file.store_line(jstr)
 
 func loadGame():
-	if saveFileR.file_exists(SaveLocation):
-		if not saveFileR.eof_reached():
+	var file = FileAccess.open(SaveLocation, FileAccess.READ)
+	#if saveFileR.file_exists(SaveLocation):
+	if FileAccess.file_exists(SaveLocation) == true:
+		if not file.eof_reached():
+		#if not saveFileR.eof_reached():
 			var curLine = JSON.parse_string(saveFileR.get_line())
 			if curLine:
 				Game.money = curLine["money"]
 		print("Save file loaded")
-
-func saveExists():
-	if saveFileR.file_exists(SaveLocation):
-		return true
-	else:
-		return false
