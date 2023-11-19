@@ -30,13 +30,13 @@ func _process(delta):
 script = ExtResource("1_fobvs")
 
 [node name="Title" type="Label" parent="."]
-offset_left = -360.0
-offset_top = -34.0
-offset_right = -143.0
-offset_bottom = 19.0
+offset_left = -56.0
+offset_top = -51.0
+offset_right = 57.0
+offset_bottom = -21.0
 theme = ExtResource("2_ngmpq")
 theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 12
 text = "Dingus."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -45,25 +45,25 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.61
+anchor_top = 0.607
 anchor_right = 0.5
 anchor_bottom = 0.61
-offset_left = -132.0
-offset_top = 17.52
-offset_right = 131.0
-offset_bottom = 47.52
+offset_left = -130.5
+offset_top = 3.829
+offset_right = 132.5
+offset_bottom = 16.67
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_ngmpq")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 8
 text = "Because yes."
 horizontal_alignment = 1
 
 [node name="TutorialLabel" type="Label" parent="."]
-offset_left = 154.0
-offset_top = -23.0
-offset_right = 338.0
-offset_bottom = -1.0
+offset_left = 78.0
+offset_top = -33.0
+offset_right = 262.0
+offset_bottom = -11.0
 theme = ExtResource("2_ngmpq")
 theme_override_font_sizes/font_size = 16
 text = "Controls"
@@ -86,7 +86,7 @@ metadata/_edit_lock_ = true
 [node name="StartAreaBounds" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartAreaBounds"]
-position = Vector2(289.5, -62.125)
+position = Vector2(292, -53)
 shape = SubResource("RectangleShape2D_yps31")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StartAreaBounds"]
@@ -98,7 +98,7 @@ position = Vector2(-89, -12)
 shape = SubResource("RectangleShape2D_8eshy")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StartAreaBounds"]
-position = Vector2(-4.75, -74)
+position = Vector2(-5, -65)
 rotation = -1.57079
 shape = SubResource("RectangleShape2D_378ev")
 
@@ -114,19 +114,83 @@ offset_top = 33.0
 offset_right = 84.0
 offset_bottom = 55.0
 theme = ExtResource("2_ngmpq")
+theme_override_font_sizes/font_size = 9
 text = "v Start Game v"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CurrencyDisplay" type="Label" parent="."]
-offset_left = -68.0
-offset_top = 170.0
-offset_right = 69.0
-offset_bottom = 196.0
+offset_left = -74.0
+offset_top = 15.0
+offset_right = 74.0
+offset_bottom = 35.0
 theme = ExtResource("2_ngmpq")
+theme_override_font_sizes/font_size = 9
 text = "{currencyDisplay}"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = SubResource("GDScript_f11wq")
 
+[node name="LoadSave" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="LoadSave"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -131.0
+offset_right = 343.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.0235294, 0.0470588, 1)
+
+[node name="LoadButton" type="Button" parent="LoadSave/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -27.0
+offset_right = -55.0
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_ngmpq")
+text = "Load from save"
+
+[node name="NoLoadButton" type="Button" parent="LoadSave/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 73.0
+offset_top = -27.0
+offset_right = 313.0
+offset_bottom = 27.0
+grow_vertical = 2
+theme = ExtResource("2_ngmpq")
+text = "New run"
+
+[node name="Label" type="Label" parent="LoadSave/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.0
+offset_top = 24.0
+offset_right = 262.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme = ExtResource("2_ngmpq")
+theme_override_font_sizes/font_size = 24
+text = "It looks like you have a save file."
+
 [connection signal="body_entered" from="StartPlayerDetection" to="." method="_on_start_player_detection_body_entered"]
+[connection signal="pressed" from="LoadSave/ColorRect/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="LoadSave/ColorRect/NoLoadButton" to="." method="_on_no_load_button_pressed"]
