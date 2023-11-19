@@ -1,17 +1,24 @@
 extends CharacterBody2D
 
-var Player = null
+@onready var Player = get_node("../Player")
 var chasing = false
 var moveDir = Vector2.ZERO
+var playerAttacked = false
 
-@export var moveSpeed = 250
+@export var health = 50
+@export var moveSpeed = 10
+@export var atkDamage = 1
 
-
+"Movement / Chasing"
 func _physics_process(delta):
-	Player = get_node("../Player") # Find da Player
+	if playerAttacked: # Put here so the player will repeatedly take damage.
+		Game.playerHP -= atkDamage
+		chasing = false # Should patch the enemy gaining speed when against player for extented time (IT DOESN'T)
 
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)
+		
+		#Split movement into X and Y components for move_and_slide.
 		velocity.x = moveDir.x * moveSpeed
 		velocity.y = moveDir.y * moveSpeed
 
@@ -20,9 +27,16 @@ func _physics_process(delta):
 func _on_player_detection_body_exited(body:Node2D):
 	if body.name == "Player":
 		chasing = false
-		print("not chasein")
-
 func _on_player_detection_body_entered(body:Node2D):
 	if body.name == "Player":
 		chasing = true
-		print("cahsaigsd")
+
+
+"Deal damage to player"
+func _on_attack_area_body_entered(body:Node2D):
+	if body.name == "Player":
+		playerAttacked = true
+func _on_attack_area_body_exited(body:Node2D):
+	if body.name == "Player":
+		playerAttacked = false
+		chasing = true
