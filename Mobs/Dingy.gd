@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Mob extends CharacterBody2D
 
 @onready var Player = get_node("../Player")
 var chasing = false
