@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://r4cyijexe6ga"]
+[gd_scene load_steps=7 format=3 uid="uid://r4cyijexe6ga"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_x6use"]
 [ext_resource type="Texture2D" uid="uid://b7kuudkf5ncwc" path="res://Textures/chems.png" id="2_qyjdo"]
+[ext_resource type="Script" path="res://Player/Sword.gd" id="3_usx6t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b55vp"]
 animations = [{
@@ -33,8 +34,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pmx1"]
-radius = 5.0
-height = 15.0
+radius = 6.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iitwp"]
+size = Vector2(4.62095, 2.04379)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_x6use")
@@ -51,3 +55,22 @@ shape = SubResource("CapsuleShape2D_5pmx1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+
+[node name="Sword" type="ColorRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 3.0
+rotation = 2.12672
+scale = Vector2(0.941382, 10.8289)
+script = ExtResource("3_usx6t")
+
+[node name="Area2D" type="Area2D" parent="Sword"]
+scale = Vector2(1.01729, 0.96997)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/Area2D"]
+position = Vector2(2.58968, 1.0376)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_iitwp")
+
+[connection signal="body_entered" from="Sword/Area2D" to="Sword" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sword/Area2D" to="Sword" method="_on_area_2d_body_exited"]

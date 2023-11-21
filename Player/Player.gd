@@ -20,8 +20,7 @@ func _physics_process(delta):
 
 	"Death"
 	if Game.playerHP <= 0:
-		queue_free()
-		get_tree().change_scene_to_file("res://Scenes/Death/Death.tscn")
+		death()
 
 	"Animation"
 	# # -- Animate --
@@ -31,4 +30,6 @@ func _physics_process(delta):
 	# 	anim.flip_h = false
 
 func death():
-	pass
+	queue_free()
+	Game.money = 0
+	get_tree().change_scene_to_file("res://Scenes/Death/Death.tscn")
