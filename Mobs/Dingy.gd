@@ -7,7 +7,7 @@ var playerAttacked = false
 
 @export var health = 50
 @export var moveSpeed = 10
-@export var atkDamage = 0
+@export var atkDamage = 1
 
 "Movement / Chasing"
 func _physics_process(delta):
@@ -22,7 +22,7 @@ func _physics_process(delta):
 		velocity.x = moveDir.x * moveSpeed
 		velocity.y = moveDir.y * moveSpeed
 
-	move_and_slide()
+		move_and_slide()
 
 func _on_player_detection_body_exited(body:Node2D):
 	if body.name == "Player":
