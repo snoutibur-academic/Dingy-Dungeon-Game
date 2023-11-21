@@ -7,7 +7,7 @@ var playerAttacked = false
 
 @export var health = 50
 @export var moveSpeed = 10
-@export var atkDamage = 1
+@export var atkDamage = 0
 
 "Movement / Chasing"
 func _physics_process(delta):

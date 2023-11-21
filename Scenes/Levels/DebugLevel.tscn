@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwi3kuv7gn0hi"]
+[gd_scene load_steps=7 format=3 uid="uid://dwi3kuv7gn0hi"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/DebugLevel.gd" id="1_nb6hj"]
 [ext_resource type="Texture2D" uid="uid://b10o65ug3nhhh" path="res://Theme/SplashImg.png" id="2_pcx7k"]
@@ -7,31 +7,12 @@
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="5_0t6ni"]
 [ext_resource type="PackedScene" uid="uid://cftxhxs5d7qr4" path="res://Mobs/Dingy.tscn" id="6_umf8l"]
 
-[sub_resource type="GDScript" id="GDScript_0p076"]
-script/source = "extends Label
-
-func _process(delta):
-	self.text = \"$\" + str(Game.money)
-"
-
 [node name="World" type="Node2D"]
 script = ExtResource("1_nb6hj")
 
 [node name="SplashImg" type="Sprite2D" parent="."]
 position = Vector2(13, -5)
 texture = ExtResource("2_pcx7k")
-
-[node name="CurrencyDisplay" type="Label" parent="SplashImg"]
-offset_left = 32.0
-offset_top = 173.0
-offset_right = 180.0
-offset_bottom = 193.0
-theme = ExtResource("5_0t6ni")
-theme_override_font_sizes/font_size = 9
-text = "{currencyDisplay}"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = SubResource("GDScript_0p076")
 
 [node name="Dingy" parent="." instance=ExtResource("6_umf8l")]
 position = Vector2(78, -26)
