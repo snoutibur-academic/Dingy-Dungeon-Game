@@ -33,6 +33,7 @@ shape = SubResource("RectangleShape2D_13x0u")
 [node name="PlayerDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_ud4sb")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
