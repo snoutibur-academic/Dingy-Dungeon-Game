@@ -23,6 +23,7 @@ func loadGame():
 			var curLine = JSON.parse_string(saveFileR.get_line())
 			if curLine:
 				Game.money = curLine["money"]
+		print("Save file loaded")
 
 func saveExists():
 	if saveFileR.file_exists(SaveLocation):

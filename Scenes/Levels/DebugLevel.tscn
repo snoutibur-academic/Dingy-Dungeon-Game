@@ -1,28 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwi3kuv7gn0hi"]
+[gd_scene load_steps=7 format=3 uid="uid://dwi3kuv7gn0hi"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/DebugLevel.gd" id="1_nb6hj"]
 [ext_resource type="Texture2D" uid="uid://b10o65ug3nhhh" path="res://Theme/SplashImg.png" id="2_pcx7k"]
 [ext_resource type="PackedScene" uid="uid://r4cyijexe6ga" path="res://Player/Player.tscn" id="3_wfh8h"]
 [ext_resource type="PackedScene" uid="uid://hj0lanaxubde" path="res://Player/HUD.tscn" id="4_pq4yi"]
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="5_0t6ni"]
+[ext_resource type="PackedScene" uid="uid://cftxhxs5d7qr4" path="res://Mobs/Dingy.tscn" id="6_umf8l"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nb6hj")
 
 [node name="SplashImg" type="Sprite2D" parent="."]
+position = Vector2(13, -5)
 texture = ExtResource("2_pcx7k")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_wfh8h")]
+[node name="Dingy" parent="." instance=ExtResource("6_umf8l")]
+position = Vector2(78, -26)
+
+[node name="Player" parent="." instance=ExtResource("3_wfh8h")]
 
 [node name="HUD" parent="." instance=ExtResource("4_pq4yi")]
-
-[node name="HurtMe" type="Button" parent="."]
-offset_left = 33.0
-offset_top = 34.0
-offset_right = 206.0
-offset_bottom = 69.0
-theme = ExtResource("5_0t6ni")
-text = "(debug) Hurt"
 
 [node name="SaveButton" type="Button" parent="."]
 offset_left = 33.0
@@ -40,6 +37,5 @@ offset_bottom = 164.0
 theme = ExtResource("5_0t6ni")
 text = "{debug} $++"
 
-[connection signal="pressed" from="HurtMe" to="." method="_on_hurt_me_pressed"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="AddMoney" to="." method="_on_add_money_pressed"]

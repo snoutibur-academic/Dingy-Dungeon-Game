@@ -1,15 +1,7 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-"Sets current level"
 func _ready():
-	Game.room = "TstLvl"
-
-"Debug/Test Hurt Button"
-func _on_hurt_me_pressed():
-	print("Debug Hurt pressed.")
-	Game.playerHP -= 10
+	Game.room = "TstLvl" # Set current level / ID's the level.
 
 func _on_save_button_pressed():
 	Utils.saveGame()
