@@ -3,7 +3,7 @@ extends Node
 "Save/load system"
 const SaveLocation = "res://DingusSaveData.bin" # Define save location
 
-var saveFileR = FileAccess.open(SaveLocation, FileAccess.READ) # Access saveFileR for read
+#var saveFileR = FileAccess.open(SaveLocation, FileAccess.READ) # Access saveFileR for read
 
 func saveGame():
 	var file = FileAccess.open(SaveLocation, FileAccess.WRITE) # Access saveFileR for write
