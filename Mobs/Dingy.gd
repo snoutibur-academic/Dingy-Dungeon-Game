@@ -22,7 +22,7 @@ func _physics_process(delta):
 		velocity.x = moveDir.x * moveSpeed
 		velocity.y = moveDir.y * moveSpeed
 
-	move_and_slide()
+		move_and_slide()
 
 func _on_player_detection_body_exited(body:Node2D):
 	if body.name == "Player":

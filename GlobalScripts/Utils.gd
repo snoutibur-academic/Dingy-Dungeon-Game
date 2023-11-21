@@ -23,7 +23,7 @@ func loadGame():
 	if FileAccess.file_exists(SaveLocation) == true:
 		if not file.eof_reached():
 		#if not saveFileR.eof_reached():
-			var curLine = JSON.parse_string(saveFileR.get_line())
+			var curLine = JSON.parse_string(file.get_line())
 			if curLine:
 				Game.money = curLine["money"]
 		print("Save file loaded")
