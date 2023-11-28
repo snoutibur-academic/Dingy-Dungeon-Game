@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://r4cyijexe6ga"]
+[gd_scene load_steps=6 format=3 uid="uid://r4cyijexe6ga"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_x6use"]
 [ext_resource type="Texture2D" uid="uid://b7kuudkf5ncwc" path="res://Textures/chems.png" id="2_qyjdo"]
-[ext_resource type="Script" path="res://Player/Sword.gd" id="3_usx6t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b55vp"]
 animations = [{
@@ -57,12 +56,12 @@ shape = SubResource("CapsuleShape2D_5pmx1")
 zoom = Vector2(5, 5)
 
 [node name="Sword" type="ColorRect" parent="."]
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 3.0
-rotation = 2.12672
+offset_top = 2.0
+offset_right = 5.0
+offset_bottom = 4.0
+rotation = 4.68213
 scale = Vector2(0.941382, 10.8289)
-script = ExtResource("3_usx6t")
+color = Color(1, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="Sword"]
 scale = Vector2(1.01729, 0.96997)

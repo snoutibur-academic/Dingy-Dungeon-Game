@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var move_speed = 40
 @onready var anim = $AnimatedSprite2D
 
+var swordDirection = Vector2()
+
 func _ready():
 	# anim.play("idle")
 	pass
@@ -17,6 +19,9 @@ func _physics_process(delta):
 	# Velocity Update
 	velocity = inDir * move_speed
 	move_and_slide()
+
+	swordDirection = lerp(swordDirection, get_global_mouse_position(), .3)
+	look_at(swordDirection)
 
 	"Death"
 	if Game.playerHP <= 0:
