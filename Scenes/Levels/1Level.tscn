@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxorl8ikb27n7"]
+[gd_scene load_steps=13 format=3 uid="uid://cxorl8ikb27n7"]
 
 [ext_resource type="PackedScene" uid="uid://r4cyijexe6ga" path="res://Player/Player.tscn" id="1_ucswq"]
 [ext_resource type="Script" path="res://Scenes/Levels/1Level.gd" id="1_wfkhm"]
 [ext_resource type="Texture2D" uid="uid://cuuw8p6lmv3iu" path="res://Textures/Assets.png" id="3_ioxxc"]
-[ext_resource type="Texture2D" uid="uid://nfey3vqutrwa" path="res://Textures/Door.png" id="4_kvxkg"]
 [ext_resource type="Texture2D" uid="uid://os1r4uxcvm7j" path="res://Textures/Full Sheet.png" id="4_momyy"]
+[ext_resource type="Texture2D" uid="uid://bgj4vc6dww46h" path="res://Textures/betterDoor.png" id="5_5hqh1"]
+[ext_resource type="PackedScene" uid="uid://cftxhxs5d7qr4" path="res://Mobs/Dingy.tscn" id="6_7e2e4"]
+[ext_resource type="PackedScene" uid="uid://hj0lanaxubde" path="res://Player/HUD.tscn" id="7_jp5jq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpa08"]
 texture = ExtResource("3_ioxxc")
@@ -477,7 +479,7 @@ sources/1 = SubResource("TileSetAtlasSource_82gju")
 size = Vector2(283, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_roeow"]
-size = Vector2(4, 34)
+size = Vector2(8, 76)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_wfkhm")
@@ -513,12 +515,23 @@ shape = SubResource("RectangleShape2D_bmjrw")
 position = Vector2(133, -87)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(-5, -1)
+position = Vector2(-7, 19)
 shape = SubResource("RectangleShape2D_roeow")
 
-[node name="Door2" type="Sprite2D" parent="."]
-position = Vector2(128, -88)
-scale = Vector2(0.2, 0.231293)
-texture = ExtResource("4_kvxkg")
+[node name="BetterDoor" type="Sprite2D" parent="Door"]
+position = Vector2(-7, 19)
+scale = Vector2(0.449999, 0.520408)
+texture = ExtResource("5_5hqh1")
+
+[node name="Dingy" parent="." instance=ExtResource("6_7e2e4")]
+position = Vector2(64, -65)
+
+[node name="Dingy2" parent="." instance=ExtResource("6_7e2e4")]
+position = Vector2(67, 68)
+
+[node name="Dingy3" parent="." instance=ExtResource("6_7e2e4")]
+position = Vector2(-82, 78)
+
+[node name="HUD" parent="." instance=ExtResource("7_jp5jq")]
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]

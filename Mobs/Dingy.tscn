@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Mobs/Dingy.gd" id="1_01lvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfl56"]
-size = Vector2(18, 17)
+size = Vector2(16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13x0u"]
-size = Vector2(22, 22)
+size = Vector2(18, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud4sb"]
-radius = 69.4622
+radius = 90.0056
 
 [node name="Dingy" type="CharacterBody2D"]
 script = ExtResource("1_01lvh")
