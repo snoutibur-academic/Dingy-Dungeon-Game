@@ -9,13 +9,13 @@ func _on_start_player_detection_body_entered(body:Node2D):
 		if Utils.loadGame(): # If player has an existing save file, ask if they wish to load it
 			$LoadSave.show()
 		else: 
-			get_tree().change_scene_to_file(("res:///Scenes/Levels/DebugLevel.tscn"))
+			get_tree().change_scene_to_file(("res:///Scenes/Levels/1Level.tscn"))
 
 
 "Load save menu"
 func _on_no_load_button_pressed():
-	get_tree().change_scene_to_file(("res:///Scenes/Levels/DebugLevel.tscn"))
+	get_tree().change_scene_to_file(("res:///Scenes/Levels/1Level.tscn"))
 
 func _on_load_button_pressed():
 	Utils.loadGame()
-	get_tree().change_scene_to_file(("res:///Scenes/Levels/DebugLevel.tscn"))
+	get_tree().change_scene_to_file(("res:///Scenes/Levels/1Level.tscn"))
