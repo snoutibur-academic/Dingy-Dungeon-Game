@@ -14,6 +14,12 @@ script = ExtResource("1_nb6hj")
 position = Vector2(13, -5)
 texture = ExtResource("2_pcx7k")
 
+[node name="Dingy3" parent="." instance=ExtResource("6_umf8l")]
+position = Vector2(-101, 97)
+
+[node name="Dingy2" parent="." instance=ExtResource("6_umf8l")]
+position = Vector2(37, 134)
+
 [node name="Dingy" parent="." instance=ExtResource("6_umf8l")]
 position = Vector2(78, -26)
 

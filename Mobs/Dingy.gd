@@ -27,15 +27,19 @@ func _physics_process(delta):
 func _on_player_detection_body_exited(body:Node2D):
 	if body.name == "Player":
 		chasing = false
+
 func _on_player_detection_body_entered(body:Node2D):
 	if body.name == "Player":
 		chasing = true
 
-
-"Deal damage to player"
+"Deal damage to player and allow player to do damage."
 func _on_attack_area_body_entered(body:Node2D):
 	if body.name == "Player":
 		playerAttacked = true
+	
+	"WIP: Sword"
+	# if body == $Player.get_child("Sword"):
+	# 	print("OWCH")
 func _on_attack_area_body_exited(body:Node2D):
 	if body.name == "Player":
 		playerAttacked = false
