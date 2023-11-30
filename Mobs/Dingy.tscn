@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Mobs/Dingy.gd" id="1_01lvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfl56"]
-size = Vector2(16, 15)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13x0u"]
 size = Vector2(18, 18)
@@ -14,24 +14,25 @@ radius = 90.0056
 [node name="Dingy" type="CharacterBody2D"]
 script = ExtResource("1_01lvh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_rfl56")
-
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -9.0
 offset_top = -8.0
 offset_right = 9.0
 offset_bottom = 10.0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_rfl56")
+
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_13x0u")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 position = Vector2(1, -1)
