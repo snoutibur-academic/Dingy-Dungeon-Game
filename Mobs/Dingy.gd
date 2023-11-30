@@ -3,17 +3,22 @@ class_name Mob extends CharacterBody2D
 @onready var Player = get_node("../Player")
 var chasing = false
 var moveDir = Vector2.ZERO
+
 var playerAttacked = false
+var beingAttacked = false
 
 @export var health = 50
 @export var moveSpeed = 10
-@export var atkDamage = 1
+@export var mobAtkDamage = 1
 
 "Movement / Chasing"
 func _physics_process(delta):
 	if playerAttacked: # Put here so the player will repeatedly take damage.
-		Game.playerHP -= atkDamage
+		Game.playerHP -= mobAtkDamage
 		chasing = false # Should patch the enemy gaining speed when against player for extented time (IT DOESN'T)
+
+	if beingAttacked:
+		health -= Game.plrAtkDmg
 
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)
@@ -27,15 +32,20 @@ func _physics_process(delta):
 func _on_player_detection_body_exited(body:Node2D):
 	if body.name == "Player":
 		chasing = false
+
 func _on_player_detection_body_entered(body:Node2D):
 	if body.name == "Player":
 		chasing = true
 
-
-"Deal damage to player"
+"Deal damage to player and allow player to do damage."
 func _on_attack_area_body_entered(body:Node2D):
 	if body.name == "Player":
 		playerAttacked = true
+	
+	if health == 0:
+		queue_free()
+
+
 func _on_attack_area_body_exited(body:Node2D):
 	if body.name == "Player":
 		playerAttacked = false
