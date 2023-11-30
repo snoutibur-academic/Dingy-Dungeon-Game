@@ -68,6 +68,7 @@ script = SubResource("GDScript_euhmn")
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="UpgradeMenu" type="CanvasLayer" parent="CanvasGroup"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasGroup/UpgradeMenu"]
 anchors_preset = 8

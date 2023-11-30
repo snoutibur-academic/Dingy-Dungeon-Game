@@ -20,6 +20,9 @@ func _physics_process(delta):
 	if beingAttacked:
 		health -= Game.plrAtkDmg
 
+		if health == 0:
+			self.queue_free()
+
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)
 		
@@ -42,11 +45,13 @@ func _on_attack_area_body_entered(body:Node2D):
 	if body.name == "Player":
 		playerAttacked = true
 	
-	if health == 0:
-		queue_free()
-
+	if body.name == "Sword":
+		beingAttacked = true
 
 func _on_attack_area_body_exited(body:Node2D):
 	if body.name == "Player":
 		playerAttacked = false
 		chasing = true
+
+	if body.name == "Sword":
+		beingAttacked = false
