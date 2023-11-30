@@ -25,6 +25,7 @@ offset_right = 9.0
 offset_bottom = 10.0
 
 [node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(0, 1)
