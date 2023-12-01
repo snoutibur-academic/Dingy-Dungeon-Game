@@ -13,8 +13,6 @@ func _on_upgrade_button_pressed():
 func _on_close_menu_pressed():
 	UpgradeMenu.visible = false
 
-func _on_upgrade_attack_button_pressed():
-	Game.plrAtkDmg += 3
 
 func _on_button_pressed():
 	Utils.saveGame()

@@ -16,20 +16,37 @@ script = ExtResource("1_fobvs")
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
 [node name="StartButton" type="Button" parent="MainMenu"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.494
+anchor_right = 0.5
+anchor_bottom = 0.494
+offset_left = -216.0
+offset_top = -40.14
+offset_right = 216.0
+offset_bottom = 49.86
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ngmpq")
+theme_override_font_sizes/font_size = 69
+text = "New run"
+
+[node name="StartFromSave" type="Button" parent="MainMenu/StartButton"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = -45.0
-offset_right = 216.0
-offset_bottom = 45.0
+offset_left = -320.0
+offset_top = 51.0
+offset_right = 321.0
+offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_ngmpq")
 theme_override_font_sizes/font_size = 69
-text = "PLAY!"
+text = "Load from save"
 
 [node name="Title" type="Node" parent="MainMenu"]
 
@@ -97,8 +114,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("2_ngmpq")
 theme_override_font_sizes/font_size = 21
-text = "CONTROLS:
-
+text = "CONTROLS::
 Movement: WASD
 Aim sword: Mouse cursor
 Attack: Colliide sword with enemies."
@@ -184,5 +200,6 @@ text = "It looks like you have a save file."
 [node name="Settings" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/StartButton/StartFromSave" to="." method="_on_start_from_save_pressed"]
 [connection signal="pressed" from="LoadSave/ColorRect/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="LoadSave/ColorRect/NoLoadButton" to="." method="_on_no_load_button_pressed"]
