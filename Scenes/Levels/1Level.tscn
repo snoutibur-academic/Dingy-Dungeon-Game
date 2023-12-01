@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxorl8ikb27n7"]
+[gd_scene load_steps=11 format=3 uid="uid://cxorl8ikb27n7"]
 
 [ext_resource type="PackedScene" uid="uid://r4cyijexe6ga" path="res://Player/Player.tscn" id="1_ucswq"]
 [ext_resource type="Script" path="res://Scenes/Levels/1Level.gd" id="1_wfkhm"]
 [ext_resource type="Texture2D" uid="uid://cuuw8p6lmv3iu" path="res://Textures/Assets.png" id="3_ioxxc"]
 [ext_resource type="Texture2D" uid="uid://os1r4uxcvm7j" path="res://Textures/Full Sheet.png" id="4_momyy"]
 [ext_resource type="PackedScene" uid="uid://hj0lanaxubde" path="res://Player/HUD.tscn" id="5_xbfxn"]
+[ext_resource type="PackedScene" uid="uid://cftxhxs5d7qr4" path="res://Mobs/Dingy.tscn" id="6_l5vqi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpa08"]
 texture = ExtResource("3_ioxxc")
@@ -507,3 +508,9 @@ shape = SubResource("RectangleShape2D_bmjrw")
 [node name="Player" parent="." instance=ExtResource("1_ucswq")]
 
 [node name="HUD" parent="." instance=ExtResource("5_xbfxn")]
+
+[node name="Dingy" parent="." instance=ExtResource("6_l5vqi")]
+position = Vector2(-35, 42)
+
+[node name="Dingy2" parent="." instance=ExtResource("6_l5vqi")]
+position = Vector2(-53, 11)
