@@ -3,14 +3,13 @@ extends Node
 "Save/load system"
 const SaveLocation = "res://DingusSaveData.bin" # Define save location
 
-#var saveFileR = FileAccess.open(SaveLocation, FileAccess.READ) # Access saveFileR for read
-
 func saveGame():
 	var file = FileAccess.open(SaveLocation, FileAccess.WRITE) # Access saveFileR for write
 
 	# Data to store
 	var data: Dictionary = {
 		"money": Game.money,
+		"plrAtkDmg": Game.plrAtkDmg,
 	}
 
 	# Convert to json and write to saveFileR
@@ -26,4 +25,6 @@ func loadGame():
 			var curLine = JSON.parse_string(file.get_line())
 			if curLine:
 				Game.money = curLine["money"]
+				Game.plrAtkDmg = curLine["plrAtkDmg"]
+
 		print("Save file loaded")

@@ -68,6 +68,7 @@ vertical_alignment = 1
 script = SubResource("GDScript_euhmn")
 
 [node name="UpgradeMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="UpgradeMenu"]
 anchors_preset = 6
@@ -158,9 +159,7 @@ offset_right = 216.0
 offset_bottom = 32.0
 theme = ExtResource("1_5xnaw")
 theme_override_font_sizes/font_size = 24
-text = "{Player Stats}
-
-# TODO: add current sword damage"
+text = "{Player Stats}"
 script = SubResource("GDScript_t5vnu")
 
 [connection signal="pressed" from="UpgradeMenu/ColorRect/UpgradeAttackButton" to="." method="_on_upgrade_attack_button_pressed"]

@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if beingAttacked:
 		health -= Game.plrAtkDmg
 
-		if health == 0:
+		if health <= 0:
 			self.queue_free()
 
 	if chasing: # Then presue the Player
