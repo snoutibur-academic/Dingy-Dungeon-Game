@@ -507,7 +507,7 @@ shape = SubResource("RectangleShape2D_bmjrw")
 
 [node name="Player" parent="." instance=ExtResource("1_ucswq")]
 
-[node name="SpawnTimer" type="Timer" parent="."]
+[node name="spawn_timer" type="Timer" parent="."]
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="." groups=["spawn"]]
@@ -525,4 +525,4 @@ position = Vector2(55, 32)
 [node name="Dingy" parent="." instance=ExtResource("6_j0o5p")]
 position = Vector2(-24, 37)
 
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
