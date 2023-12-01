@@ -30,17 +30,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RoomNumberLbl" type="Label" parent="."]
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = -184.0
-offset_top = -170.0
-offset_right = -24.0
-offset_bottom = -26.0
+offset_bottom = 96.0
 grow_horizontal = 0
-grow_vertical = 0
 theme = ExtResource("1_5xnaw")
 theme_override_font_sizes/font_size = 36
 text = "rm#"
@@ -65,81 +60,102 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = SubResource("GDScript_euhmn")
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
+[node name="UpgradeMenu" type="CanvasLayer" parent="."]
 
-[node name="UpgradeMenu" type="CanvasLayer" parent="CanvasGroup"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasGroup/UpgradeMenu"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -343.0
-offset_top = -131.0
-offset_right = 343.0
-offset_bottom = 131.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.0235294, 0.0470588, 1)
-
-[node name="UpgradeSomething" type="Button" parent="CanvasGroup/UpgradeMenu/ColorRect"]
-layout_mode = 1
+[node name="ColorRect" type="ColorRect" parent="UpgradeMenu"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -295.0
-offset_top = -27.0
-offset_right = -55.0
-offset_bottom = 27.0
+offset_left = -287.0
+offset_top = -133.0
+offset_bottom = 133.0
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("1_5xnaw")
-text = "Something - $<cost>"
+color = Color(0.294118, 0.25098, 0.294118, 1)
 
-[node name="UpgradeAttackButton" type="Button" parent="CanvasGroup/UpgradeMenu/ColorRect"]
+[node name="UpgradeAttackButton" type="Button" parent="UpgradeMenu/ColorRect"]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 73.0
+offset_left = -120.5
 offset_top = -27.0
-offset_right = 313.0
+offset_right = 120.5
 offset_bottom = 27.0
+grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5xnaw")
 text = "Attack Damage - $<cost>"
 script = ExtResource("3_jdvxh")
 
-[node name="Label" type="Label" parent="CanvasGroup/UpgradeMenu/ColorRect"]
+[node name="Label" type="Label" parent="UpgradeMenu/ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -261.0
+offset_left = -78.5
 offset_top = 24.0
-offset_right = 262.0
+offset_right = 79.5
 offset_bottom = 53.0
 grow_horizontal = 2
 theme = ExtResource("1_5xnaw")
 theme_override_font_sizes/font_size = 24
-text = "It looks like you have a save file."
+text = "Upgrades:"
+horizontal_alignment = 1
 
-[node name="UpgradeMenuShowButton" type="Button" parent="."]
+[node name="CloseMenu" type="Button" parent="UpgradeMenu/ColorRect"]
+layout_mode = 0
+offset_left = 255.0
+offset_right = 286.0
+offset_bottom = 31.0
+text = "X"
+
+[node name="UpgradeButton" type="Button" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -85.0
-offset_top = -27.0
+offset_left = -144.0
+offset_top = -58.0
+offset_right = -24.0
+offset_bottom = -21.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("1_5xnaw")
 theme_override_font_sizes/font_size = 24
 text = "Upgrade"
 
-[connection signal="pressed" from="CanvasGroup/UpgradeMenu/ColorRect/UpgradeAttackButton" to="CanvasGroup/UpgradeMenu/ColorRect/UpgradeAttackButton" method="_on_pressed"]
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -98.0
+offset_right = -24.0
+offset_bottom = -66.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_5xnaw")
+theme_override_font_sizes/font_size = 24
+text = "Save"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 216.0
+offset_bottom = 32.0
+theme = ExtResource("1_5xnaw")
+theme_override_font_sizes/font_size = 24
+text = "{Player Stats}
+
+# TODO: add current sword damage"
+
+[connection signal="pressed" from="UpgradeMenu/ColorRect/UpgradeAttackButton" to="." method="_on_upgrade_attack_button_pressed"]
+[connection signal="pressed" from="UpgradeMenu/ColorRect/CloseMenu" to="." method="_on_close_menu_pressed"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
