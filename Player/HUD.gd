@@ -2,6 +2,9 @@ extends CanvasLayer
 
 @onready var  UpgradeMenu = $UpgradeMenu
 
+"Upgrades var"
+var cost = 10
+
 func _process(delta):
 	"Label Updates"
 	$HealthLabel.text = "HP: " + str(Game.playerHP) + " / " + str(Game.playerMaxHP)
@@ -13,7 +16,14 @@ func _on_upgrade_button_pressed():
 func _on_close_menu_pressed():
 	UpgradeMenu.visible = false
 
-
 func _on_button_pressed():
 	Utils.saveGame()
 
+"Upgrade Button!"
+func _on_upgrade_attack_button_pressed():
+	if (Game.money - cost) >= cost:
+		Game.money -= cost
+		cost += round(cost/4.7)
+
+		Game.plrAtkDmg +=1
+	$UpgradeMenu/ColorRect/UpgradeAttackButton.text = "Attack Damage: -$" + str(cost)
