@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://hj0lanaxubde"]
+[gd_scene load_steps=5 format=3 uid="uid://hj0lanaxubde"]
 
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="1_5xnaw"]
 [ext_resource type="Script" path="res://Player/HUD.gd" id="1_ecv5k"]
-[ext_resource type="Script" path="res://Player/UpgradeAttackButton.gd" id="3_jdvxh"]
 
 [sub_resource type="GDScript" id="GDScript_euhmn"]
 script/source = "extends Label
@@ -45,7 +44,7 @@ offset_bottom = 96.0
 grow_horizontal = 0
 theme = ExtResource("1_5xnaw")
 theme_override_font_sizes/font_size = 36
-text = "rm#"
+text = "wave#"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -97,8 +96,7 @@ offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5xnaw")
-text = "Attack Damage - $<cost>"
-script = ExtResource("3_jdvxh")
+text = "Attack Damage - $10"
 
 [node name="Label" type="Label" parent="UpgradeMenu/ColorRect"]
 layout_mode = 1
