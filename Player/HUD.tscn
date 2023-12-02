@@ -153,8 +153,10 @@ theme_override_font_sizes/font_size = 24
 text = "Save"
 
 [node name="StatsLabel" type="Label" parent="."]
-offset_right = 216.0
-offset_bottom = 32.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 226.0
+offset_bottom = 42.0
 theme = ExtResource("1_5xnaw")
 theme_override_font_sizes/font_size = 24
 text = "{Player Stats}"
