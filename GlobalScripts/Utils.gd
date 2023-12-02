@@ -10,6 +10,7 @@ func saveGame():
 	var data: Dictionary = {
 		"money": Game.money,
 		"plrAtkDmg": Game.plrAtkDmg,
+		"atkDmgUpgradeCost": Game.atkDmgUpgradeCost
 	}
 
 	# Convert to json and write to saveFileR
@@ -26,5 +27,5 @@ func loadGame():
 			if curLine:
 				Game.money = curLine["money"]
 				Game.plrAtkDmg = curLine["plrAtkDmg"]
-
+				Game.atkDmgUpgradeCost = curLine["atkDmgUpgradeCost"]
 		print("Save file loaded")
