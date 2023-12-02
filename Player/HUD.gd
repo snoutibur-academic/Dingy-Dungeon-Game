@@ -3,7 +3,6 @@ extends CanvasLayer
 @onready var  UpgradeMenu = $UpgradeMenu
 
 "Upgrades var"
-var cost = 10
 
 func _process(delta):
 	"Label Updates"
@@ -21,9 +20,9 @@ func _on_button_pressed():
 
 "Upgrade Button!"
 func _on_upgrade_attack_button_pressed():
-	if (Game.money - cost) >= cost:
-		Game.money -= cost
-		cost += round(cost/4.7)
+	if (Game.money - Game.atkDmgUpgradeCost) >= Game.atkDmgUpgradeCost:
+		Game.money -= Game.atkDmgUpgradeCost
+		Game.atkDmgUpgradeCost += round(Game.atkDmgUpgradeCost/4.7)
 
 		Game.plrAtkDmg +=1
-	$UpgradeMenu/ColorRect/UpgradeAttackButton.text = "Attack Damage: -$" + str(cost)
+	$UpgradeMenu/ColorRect/UpgradeAttackButton.text = "Attack Damage: -$" + str(Game.atkDmgUpgradeCost)
