@@ -20,7 +20,8 @@ func _on_button_pressed():
 
 "Upgrade Button!"
 func _on_upgrade_attack_button_pressed():
-	if (Game.money - Game.atkDmgUpgradeCost) >= Game.atkDmgUpgradeCost:
+	print(str((Game.money - Game.atkDmgUpgradeCost)))
+	if (Game.money) >= Game.atkDmgUpgradeCost:
 		Game.money -= Game.atkDmgUpgradeCost
 		Game.atkDmgUpgradeCost += round(Game.atkDmgUpgradeCost/4.7)
 

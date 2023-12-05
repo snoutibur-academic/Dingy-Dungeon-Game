@@ -512,5 +512,8 @@ shape = SubResource("RectangleShape2D_bmjrw")
 [node name="Dingy" parent="." instance=ExtResource("6_l5vqi")]
 position = Vector2(-35, 42)
 
+[node name="Dingy3" parent="." instance=ExtResource("6_l5vqi")]
+position = Vector2(-70, 38)
+
 [node name="Dingy2" parent="." instance=ExtResource("6_l5vqi")]
-position = Vector2(-53, 11)
+position = Vector2(-58, 12)
