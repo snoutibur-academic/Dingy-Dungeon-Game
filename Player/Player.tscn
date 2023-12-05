@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://r4cyijexe6ga"]
+[gd_scene load_steps=7 format=3 uid="uid://r4cyijexe6ga"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_x6use"]
-[ext_resource type="Texture2D" uid="uid://b7kuudkf5ncwc" path="res://Textures/chems.png" id="2_qyjdo"]
+[ext_resource type="Texture2D" uid="uid://hq0rt6be8fa" path="res://Textures/Player.png" id="2_uec87"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b55vp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qyjdo")
+"texture": ExtResource("2_uec87")
 }],
 "loop": true,
 "name": &"idle",
@@ -15,7 +15,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qyjdo")
+"texture": ExtResource("2_uec87")
 }],
 "loop": true,
 "name": &"walking",
@@ -33,41 +33,44 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pmx1"]
-radius = 6.0
-height = 20.0
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kn2oo"]
+radius = 3.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6n3am"]
-size = Vector2(21, 2)
+size = Vector2(2, 11)
 
 [node name="Player" type="CharacterBody2D"]
+rotation = 1.57079
 script = ExtResource("1_x6use")
 move_speed = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.0246085, 0.0246085)
+rotation = 0.00148703
+scale = Vector2(0.257812, 0.257812)
 sprite_frames = SubResource("SpriteFrames_b55vp")
-animation = &"idle"
+animation = &"walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(-5, 0.999989)
+rotation = 4.71238
 shape = SubResource("CapsuleShape2D_5pmx1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1.00001)
+rotation = 4.71238
+shape = SubResource("CircleShape2D_kn2oo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(8.225, 8.225)
 
 [node name="Sword" type="StaticBody2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Sword"]
-offset_left = 6.0
-offset_top = 1.0
-offset_right = 8.0
-offset_bottom = 22.0
-rotation = -1.57079
-color = Color(0.768627, 0, 0.360784, 1)
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sword"]
-position = Vector2(16.5, 0)
-rotation = 0.00633489
+position = Vector2(11, 1.00002)
+rotation = -1.57079
 shape = SubResource("RectangleShape2D_6n3am")
 one_way_collision = true
 one_way_collision_margin = 0.0
