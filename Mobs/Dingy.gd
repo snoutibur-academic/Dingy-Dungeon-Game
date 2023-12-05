@@ -10,6 +10,7 @@ var beingAttacked = false
 @export var health = 50
 @export var moveSpeed = 10
 @export var mobAtkDamage = 1
+@export var moneyDrop = 5
 
 "Movement / Chasing"
 func _physics_process(delta):
@@ -22,6 +23,7 @@ func _physics_process(delta):
 
 		if health <= 0:
 			self.queue_free()
+			Game.money += moneyDrop
 
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)
