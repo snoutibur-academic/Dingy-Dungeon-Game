@@ -17,8 +17,8 @@ func _on_spawn_timer_timeout():
 		print(i)
 		randomize()
 		var x = randi() % packed_scene.size()
-		location.x = randi_range(1,window_size.x)
-		location.y = randi_range(1,window_size.y)
+		location.x = randi_range(-260,280)
+		location.y = randi_range(-260,280)
 		var scene = packed_scene[x].instantiate()
 		scene.position = location
 		add_child(scene)
