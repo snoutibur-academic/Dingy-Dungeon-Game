@@ -7,6 +7,8 @@ var moveDir = Vector2.ZERO
 var playerAttacked = false
 var beingAttacked = false
 
+@onready var DeathSound = $DeathSound #Audio player now exists!
+
 @export var health = 50
 @export var moveSpeed = 10
 @export var mobAtkDamage = 1
@@ -21,9 +23,10 @@ func _physics_process(delta):
 	if beingAttacked:
 		health -= Game.plrAtkDmg
 
-		if health <= 0:
-			self.queue_free()
+		if health <= 0: # AKA on death
+			# DeathSound.play()
 			Game.money += moneyDrop
+			self.queue_free()
 
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)
