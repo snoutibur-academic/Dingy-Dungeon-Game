@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxorl8ikb27n7"]
+[gd_scene load_steps=12 format=3 uid="uid://cxorl8ikb27n7"]
 
 [ext_resource type="PackedScene" uid="uid://r4cyijexe6ga" path="res://Player/Player.tscn" id="1_ucswq"]
 [ext_resource type="Script" path="res://Scenes/Levels/1Level.gd" id="1_wfkhm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://os1r4uxcvm7j" path="res://Textures/Full Sheet.png" id="4_momyy"]
 [ext_resource type="PackedScene" uid="uid://hj0lanaxubde" path="res://Player/HUD.tscn" id="6_e5olg"]
 [ext_resource type="PackedScene" uid="uid://cftxhxs5d7qr4" path="res://Mobs/Dingy.tscn" id="6_j0o5p"]
+[ext_resource type="AudioStream" uid="uid://bvfl4galyg3aw" path="res://Soundz/fragileSquare2.mp3" id="7_fu835"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpa08"]
 texture = ExtResource("3_ioxxc")
@@ -515,5 +516,11 @@ autostart = true
 position = Vector2(-24, 37)
 
 [node name="HUD" parent="." instance=ExtResource("6_e5olg")]
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fu835")
+volume_db = 24.0
+pitch_scale = 0.29
+autoplay = true
 
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
