@@ -27,13 +27,6 @@ func _physics_process(delta):
 	if Game.playerHP <= 0:
 		death()
 
-	"Animation"
-	# # -- Animate --
-	# if inDir == -1:
-	# 	anim.flip_h = true
-	# elif inDir == 1:
-	# 	anim.flip_h = false
-
 func death():
 	queue_free()
 	Game.money = 0
