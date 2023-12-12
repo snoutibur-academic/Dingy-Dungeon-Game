@@ -508,6 +508,8 @@ shape = SubResource("RectangleShape2D_bmjrw")
 [node name="Player" parent="." instance=ExtResource("1_ucswq")]
 
 [node name="spawn_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
 
 [node name="Dingy" parent="." instance=ExtResource("6_j0o5p")]
 position = Vector2(-24, 37)
