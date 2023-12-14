@@ -5,6 +5,10 @@ var packed_scene = [
 	preload("res://Mobs/Dingy.tscn")
 ]
 
+func _ready():
+	# spawnWave()
+	pass
+
 "Call to spawn dingys"
 func spawnWave():
 	for i in range(randi_range(10,51)):
@@ -17,4 +21,5 @@ func spawnWave():
 		scene.position = location
 		add_child(scene)
 	
+	Game.wave += 1
 	Game.waveDifficultyMultiplier *= 1.2

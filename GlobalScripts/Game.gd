@@ -7,6 +7,6 @@ var money = 0
 var plrAtkDmg = 1
 var atkDmgUpgradeCost = 10
 
-var room = 0
+var wave = 0
 var waveDifficultyMultiplier = 1
 var mobCount = 0
