@@ -14,6 +14,9 @@ var beingAttacked = false
 @export var mobAtkDamage = 1
 @export var moneyDrop = 5
 
+func _ready():
+	Game.mobCount += 1
+
 "Movement / Chasing"
 func _physics_process(delta):
 	if playerAttacked: # Put here so the player will repeatedly take damage.
@@ -25,6 +28,7 @@ func _physics_process(delta):
 
 		if health <= 0: # AKA on death
 			# DeathSound.play()
+			Game.mobCount -= 1
 			Game.money += moneyDrop
 			self.queue_free()
 

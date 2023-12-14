@@ -16,7 +16,9 @@ func _on_start_button_pressed():
 	Game.money = 0
 	Game.atkDmgUpgradeCost = 10
 	Game.plrAtkDmg = 1
+	Game.mobCount = 0
 
 func _on_start_from_save_pressed():
 	Utils.loadGame()
+	Game.mobCount = 0
 	get_tree().change_scene_to_file(("res:///Scenes/Levels/1Level.tscn"))

@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://hj0lanaxubde"]
+[gd_scene load_steps=6 format=3 uid="uid://hj0lanaxubde"]
 
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="1_5xnaw"]
 [ext_resource type="Script" path="res://Player/HUD.gd" id="1_ecv5k"]
+
+[sub_resource type="GDScript" id="GDScript_45pey"]
+script/source = "extends Label
+
+func _process(delta):
+	self.text = str(Game.mobCount)
+"
 
 [sub_resource type="GDScript" id="GDScript_euhmn"]
 script/source = "extends Label
@@ -49,6 +56,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
+
+[node name="MobCount" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_top = 41.0
+offset_right = 184.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme = ExtResource("1_5xnaw")
+theme_override_font_sizes/font_size = 27
+text = "{MobCount}"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = SubResource("GDScript_45pey")
 
 [node name="CurrencyDisplay" type="Label" parent="."]
 anchors_preset = 2

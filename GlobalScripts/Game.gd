@@ -8,3 +8,4 @@ var plrAtkDmg = 1
 var atkDmgUpgradeCost = 10
 
 var room = 0
+var mobCount = 0

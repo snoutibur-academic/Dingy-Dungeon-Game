@@ -7,10 +7,6 @@ var packed_scene = [
 
 func _process(delta):
 	pass
-	
-
-#var enemy_1 = preload("res://Mobs/Dingy.tscn")
-
 
 func _on_spawn_timer_timeout():
 	for i in range(randi_range(10,51)):
