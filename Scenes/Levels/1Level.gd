@@ -16,3 +16,5 @@ func spawnWave():
 		var scene = packed_scene[x].instantiate()
 		scene.position = location
 		add_child(scene)
+	
+	Game.waveDifficultyMultiplier *= 1.2

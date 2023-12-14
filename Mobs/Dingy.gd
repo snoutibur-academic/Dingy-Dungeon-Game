@@ -17,6 +17,11 @@ var beingAttacked = false
 func _ready():
 	Game.mobCount += 1
 
+	"Difficulty boosts"
+	health *= Game.waveDifficultyMultiplier
+	mobAtkDamage *= Game.waveDifficultyMultiplier
+	moneyDrop *= Game.waveDifficultyMultiplier
+
 "Movement / Chasing"
 func _physics_process(delta):
 	if playerAttacked: # Put here so the player will repeatedly take damage.
@@ -27,7 +32,7 @@ func _physics_process(delta):
 		health -= Game.plrAtkDmg
 
 		if health <= 0: # AKA on death
-			death()
+			print("i died okay>")
 
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)

@@ -16,6 +16,8 @@ func _on_start_button_pressed():
 	Game.money = 0
 	Game.atkDmgUpgradeCost = 10
 	Game.plrAtkDmg = 1
+
+	Game.waveDifficultyMultiplier = 1
 	Game.mobCount = 0
 
 func _on_start_from_save_pressed():
