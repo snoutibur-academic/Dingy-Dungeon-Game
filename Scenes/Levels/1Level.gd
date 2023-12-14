@@ -1,12 +1,12 @@
 extends Node2D
 const window_size = Vector2(1440,810)
 var location = Vector2()
+
 var packed_scene = [
 	preload("res://Mobs/Dingy.tscn")
 ]
 
 func _ready():
-	# spawnWave()
 	pass
 
 "Call to spawn dingys"
