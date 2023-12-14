@@ -1,13 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://hj0lanaxubde"]
+[gd_scene load_steps=8 format=3 uid="uid://hj0lanaxubde"]
 
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="1_5xnaw"]
 [ext_resource type="Script" path="res://Player/HUD.gd" id="1_ecv5k"]
+
+[sub_resource type="GDScript" id="GDScript_47elf"]
+script/source = "extends Label
+
+func _process(delta):
+	self.text = \"HP: \" + str(Game.playerHP) + \" / \" + str(Game.playerMaxHP)
+"
+
+[sub_resource type="GDScript" id="GDScript_yun2g"]
+script/source = "extends Label
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	self.text = str(Game.room)
+"
 
 [sub_resource type="GDScript" id="GDScript_45pey"]
 script/source = "extends Label
 
 func _process(delta):
-	self.text = str(Game.mobCount)
+	self.text = \"Dingys: \" + str(Game.mobCount)
 "
 
 [sub_resource type="GDScript" id="GDScript_euhmn"]
@@ -41,6 +56,7 @@ theme_override_font_sizes/font_size = 32
 text = "HealthLabel"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = SubResource("GDScript_47elf")
 
 [node name="RoomNumberLbl" type="Label" parent="."]
 anchors_preset = 1
@@ -56,6 +72,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
+script = SubResource("GDScript_yun2g")
 
 [node name="MobCount" type="Label" parent="."]
 anchors_preset = 5

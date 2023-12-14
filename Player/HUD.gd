@@ -2,13 +2,6 @@ extends CanvasLayer
 
 @onready var  UpgradeMenu = $UpgradeMenu
 
-"Upgrades var"
-
-func _process(delta):
-	"Label Updates"
-	$HealthLabel.text = "HP: " + str(Game.playerHP) + " / " + str(Game.playerMaxHP)
-	$RoomNumberLbl.text = str(Game.room)
-
 "Upgrades"
 func _on_upgrade_button_pressed():
 	UpgradeMenu.visible = true
