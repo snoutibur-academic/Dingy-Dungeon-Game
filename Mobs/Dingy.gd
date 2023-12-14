@@ -72,6 +72,6 @@ func death():
 	# DeathSound.play()
 	Game.mobCount -= 1
 	Game.money += moneyDrop
-
-	# if Game.mobCount == 0:
-	# 	Level.spawnWave()
+	if Game.mobCount == 0:
+		Game.wave += 1
+		Game.waveDifficultyMultiplier *= 1.2
