@@ -32,7 +32,8 @@ func _physics_process(delta):
 		health -= Game.plrAtkDmg
 
 		if health <= 0: # AKA on death
-			print("i died okay>")
+			death()
+			self.queue_free()
 
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)
@@ -71,7 +72,6 @@ func death():
 	# DeathSound.play()
 	Game.mobCount -= 1
 	Game.money += moneyDrop
-	self.queue_free()
 
-	if Game.mobCount == 0:
-		Level.spawnWave()
+	# if Game.mobCount == 0:
+	# 	Level.spawnWave()
