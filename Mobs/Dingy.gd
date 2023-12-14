@@ -75,3 +75,5 @@ func death():
 	if Game.mobCount == 0:
 		Game.wave += 1
 		Game.waveDifficultyMultiplier *= 1.2
+
+		
