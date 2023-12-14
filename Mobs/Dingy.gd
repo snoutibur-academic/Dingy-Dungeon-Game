@@ -27,10 +27,7 @@ func _physics_process(delta):
 		health -= Game.plrAtkDmg
 
 		if health <= 0: # AKA on death
-			# DeathSound.play()
-			Game.mobCount -= 1
-			Game.money += moneyDrop
-			self.queue_free()
+			death()
 
 	if chasing: # Then presue the Player
 		moveDir = position.direction_to(Player.position)
@@ -64,3 +61,12 @@ func _on_attack_area_body_exited(body:Node2D):
 
 	if body.name == "Sword":
 		beingAttacked = false
+
+func death():
+	# DeathSound.play()
+	Game.mobCount -= 1
+	Game.money += moneyDrop
+	self.queue_free()
+
+	if Game.mobCount == 0:
+		Level.spawnWave()

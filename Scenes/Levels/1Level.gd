@@ -5,10 +5,8 @@ var packed_scene = [
 	preload("res://Mobs/Dingy.tscn")
 ]
 
-func _process(delta):
-	pass
-
-func _on_spawn_timer_timeout():
+"Call to spawn dingys"
+func spawnWave():
 	for i in range(randi_range(10,51)):
 		print(i)
 		randomize()
