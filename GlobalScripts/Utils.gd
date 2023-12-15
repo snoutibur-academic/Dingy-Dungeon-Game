@@ -11,7 +11,15 @@ func saveGame():
 		"playerHP": Game.playerHP,
 		"money": Game.money,
 		"plrAtkDmg": Game.plrAtkDmg,
-		"atkDmgUpgradeCost": Game.atkDmgUpgradeCost
+		"atkDmgUpgradeCost": Game.atkDmgUpgradeCost,
+
+		"wave": Game.wave,
+		"dingyFunny": Game.dingyFunny,
+
+		"healAmount": Game.healAmount,
+		"healCost": Game.healCost,
+
+		"speedUpgradeCost": Game.speedUpgradeCost
 	}
 
 	# Convert to json and write to saveFileR
@@ -28,6 +36,15 @@ func loadGame():
 			if curLine:
 				Game.playerHP = curLine["playerHP"]
 				Game.money = curLine["money"]
+
 				Game.plrAtkDmg = curLine["plrAtkDmg"]
 				Game.atkDmgUpgradeCost = curLine["atkDmgUpgradeCost"]
-		print("Save file loaded")
+
+				Game.wave = curLine["wave"]
+				Game.dingyFunny = curLine["dingyFunny"]
+
+				Game.atkDmgUpgradeCost = curLine["atkDmgUpgradeCost"]
+				Game.speedUpgradeCost = curLine["speedUpgradeCost"]
+
+				Game.healAmount = curLine["healAmount"]
+				Game.healCost = curLine["healCost"]

@@ -19,3 +19,26 @@ func _on_upgrade_attack_button_pressed():
 
 		Game.plrAtkDmg +=1
 	$UpgradeMenu/ColorRect/UpgradeAttackButton.text = "Attack Damage: -$" + str(Game.atkDmgUpgradeCost)
+
+
+func _on_buy_health_button_pressed():
+	if (Game.money) >= Game.healCost:
+
+		Game.money -= Game.healCost
+		Game.healCost += round(Game.healthcost * 1.5 * Game.wave)
+		Game.healAmount = Game.wave * 5
+
+		Game.playerHP += Game.healAmount
+
+	$UpgradeMenu/ColorRect/UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal" + Game.healAmount + "HP for -$" + str(Game.healCost) 
+
+func _on_speed_upgrade_button_pressed():
+	if (Game.money) >= Game.speedUpgradeCost:
+
+		Game.money -= Game.speedUpgradeCost
+		Game.speedUpgradeCost += round(Game.healthcost * 1.5 * Game.wave)
+		Game.speedUpgradeCost = Game.wave * 5
+
+		Game.playerSpeed += 5
+
+	$UpgradeMenu/ColorRect/UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal" + Game.healAmount + "HP for -$" + str(Game.healCost) 

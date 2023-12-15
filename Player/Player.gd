@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed = 15
+@export var move_speed = Game.playerSpeed
 @onready var anim = $AnimatedSprite2D
 
 var swordDirection = Vector2()
