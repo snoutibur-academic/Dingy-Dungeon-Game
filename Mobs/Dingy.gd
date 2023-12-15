@@ -45,6 +45,8 @@ func _physics_process(delta):
 
 		move_and_slide()
 
+	look_at(Player.position)
+
 func _on_player_detection_body_exited(body:Node2D):
 	if body.name == "Player":
 		chasing = false

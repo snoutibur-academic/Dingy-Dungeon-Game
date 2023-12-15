@@ -19,11 +19,13 @@ script = ExtResource("1_01lvh")
 
 [node name="Dingy" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
+rotation = 1.57079
 scale = Vector2(0.265625, 0.265625)
 texture = ExtResource("2_wti8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
+rotation = 1.57079
 shape = SubResource("CapsuleShape2D_ymkco")
 debug_color = Color(0, 0.564706, 0.866667, 0.419608)
 
@@ -31,6 +33,7 @@ debug_color = Color(0, 0.564706, 0.866667, 0.419608)
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+rotation = 1.57079
 shape = SubResource("CapsuleShape2D_usscw")
 debug_color = Color(0.956863, 0, 0.541176, 0.419608)
 
