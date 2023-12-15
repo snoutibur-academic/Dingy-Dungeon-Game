@@ -8,7 +8,7 @@ var atkDmgUpgradeCost = 10
 var healCost = 30
 var healAmount = 5
 
-var playerSpeed = 15
+var playerSpeed = 35
 var speedUpgradeCost = 20
 
 var wave = 0

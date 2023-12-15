@@ -27,7 +27,7 @@ func _on_speed_upgrade_button_pressed():
 		Game.speedUpgradeCost += round(Game.speedUpgradeCost * 1.5 * Game.wave)
 		Game.speedUpgradeCost = Game.wave * 5
 
-		Game.playerSpeed += 5
+		Game.playerSpeed += 10
 	
 	$UpgradeMenu/ColorRect/SpeedUpgradeButton.text = "5 speed for -$" + str(Game.speedUpgradeCost)
 
@@ -35,7 +35,7 @@ func _on_buy_health_button_pressed():
 	if (Game.money) >= Game.healCost:
 
 		Game.money -= Game.healCost
-		Game.healCost += round(Game.healCost * 1.5 * Game.wave)
+		Game.healCost = round(5 * Game.wave)
 		Game.healAmount = Game.wave * 5
 
 		Game.playerHP += Game.healAmount

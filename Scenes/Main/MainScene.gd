@@ -23,7 +23,7 @@ func _on_start_button_pressed():
 	Game.healCost = 30
 
 	Game.speedUpgradeCost = 20
-	Game.playerSpeed = 15
+	Game.playerSpeed = 35
 
 func _on_start_from_save_pressed():
 	Utils.loadGame()

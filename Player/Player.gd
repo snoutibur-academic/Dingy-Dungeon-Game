@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@export var move_speed = Game.playerSpeed
 @onready var anim = $AnimatedSprite2D
 
 var swordDirection = Vector2()
@@ -17,7 +16,7 @@ func _physics_process(delta):
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	# Velocity Update
-	velocity = inDir * move_speed
+	velocity = inDir * Game.playerSpeed
 	move_and_slide()
 
 	swordDirection = lerp(swordDirection, get_global_mouse_position(), .3)

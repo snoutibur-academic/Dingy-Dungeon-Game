@@ -29,7 +29,7 @@ func _process(delta):
 script/source = "extends Label
 
 func _process(delta):
-	self.text = \"$\" + str(Game.money)
+	self.text = \"$\" + str(round(Game.money))
 "
 
 [sub_resource type="GDScript" id="GDScript_t5vnu"]
@@ -138,7 +138,7 @@ offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5xnaw")
-text = "Upgrade attack"
+text = "{atk++}"
 
 [node name="SpeedUpgradeButton" type="Button" parent="UpgradeMenu/ColorRect"]
 layout_mode = 1
@@ -154,7 +154,7 @@ offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5xnaw")
-text = "upgrade speed"
+text = "{speed++}"
 
 [node name="BuyHealthButton" type="Button" parent="UpgradeMenu/ColorRect"]
 layout_mode = 1
@@ -170,7 +170,7 @@ offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5xnaw")
-text = "Buy health"
+text = "{health++}"
 
 [node name="Label" type="Label" parent="UpgradeMenu/ColorRect"]
 layout_mode = 1
