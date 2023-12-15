@@ -1,35 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://cftxhxs5d7qr4"]
+[gd_scene load_steps=6 format=3 uid="uid://cftxhxs5d7qr4"]
 
 [ext_resource type="Script" path="res://Mobs/Dingy.gd" id="1_01lvh"]
+[ext_resource type="Texture2D" uid="uid://eb0kt1tprik3" path="res://Textures/Dingy.png" id="2_wti8h"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfl56"]
-size = Vector2(16, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymkco"]
+radius = 2.0
+height = 16.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13x0u"]
-size = Vector2(18, 18)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usscw"]
+radius = 3.0
+height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud4sb"]
-radius = 322.002
+radius = 494.001
 
 [node name="Dingy" type="CharacterBody2D"]
 script = ExtResource("1_01lvh")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -9.0
-offset_top = -8.0
-offset_right = 9.0
-offset_bottom = 10.0
+[node name="Dingy" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.265625, 0.265625)
+texture = ExtResource("2_wti8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_rfl56")
+shape = SubResource("CapsuleShape2D_ymkco")
+debug_color = Color(0, 0.564706, 0.866667, 0.419608)
 
 [node name="AttackArea" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-shape = SubResource("RectangleShape2D_13x0u")
+shape = SubResource("CapsuleShape2D_usscw")
+debug_color = Color(0.956863, 0, 0.541176, 0.419608)
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 visible = false

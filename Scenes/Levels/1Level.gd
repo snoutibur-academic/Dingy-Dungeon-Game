@@ -12,7 +12,7 @@ var packed_scene = [
 func _on_spawn_timer_timeout():
 	if Game.mobCount == 0:
 		Game.wave += 1
-		Game.waveDifficultyMultiplier *= 1.2
+		Game.waveDifficultyMultiplier *= 1.3
 		Game.dingyFunny *= 1.5
 		ceil(Game.dingyFunny)
 

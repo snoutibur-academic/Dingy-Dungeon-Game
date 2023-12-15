@@ -10,7 +10,7 @@ var beingAttacked = false
 @onready var DeathSound = $DeathSound #Audio player now exists!
 
 @export var health = 50
-@export var moveSpeed = 50
+@export var moveSpeed = 10
 @export var mobAtkDamage = 1
 @export var moneyDrop = 5
 
@@ -21,6 +21,7 @@ func _ready():
 	health *= Game.waveDifficultyMultiplier
 	mobAtkDamage *= Game.waveDifficultyMultiplier
 	moneyDrop *= Game.waveDifficultyMultiplier
+	moveSpeed *= Game.waveDifficultyMultiplier
 
 "Movement / Chasing"
 func _physics_process(delta):
