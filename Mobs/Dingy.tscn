@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cftxhxs5d7qr4"]
+[gd_scene load_steps=7 format=3 uid="uid://cftxhxs5d7qr4"]
 
 [ext_resource type="Script" path="res://Mobs/Dingy.gd" id="1_01lvh"]
 [ext_resource type="Texture2D" uid="uid://eb0kt1tprik3" path="res://Textures/Dingy.png" id="2_wti8h"]
+[ext_resource type="AudioStream" uid="uid://ct12dy6ft6ac0" path="res://Soundz/DingyDeath.wav" id="3_vgrc2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymkco"]
 radius = 2.0
@@ -45,6 +46,7 @@ position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_ud4sb")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vgrc2")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

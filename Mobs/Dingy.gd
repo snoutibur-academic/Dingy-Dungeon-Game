@@ -7,7 +7,7 @@ var moveDir = Vector2.ZERO
 var playerAttacked = false
 var beingAttacked = false
 
-@onready var DeathSound = $DeathSound #Audio player now exists!
+#@onready var DeathSound = $DeathSound #Audio player now exists!
 
 @export var health = 50
 @export var moveSpeed = 10
@@ -72,7 +72,7 @@ func _on_attack_area_body_exited(body:Node2D):
 		beingAttacked = false
 
 func death():
-	# DeathSound.play()
+	$AudioStreamPlayer.play()
 	Game.mobCount -= 1
 	Game.money += moneyDrop
 	self.queue_free()
