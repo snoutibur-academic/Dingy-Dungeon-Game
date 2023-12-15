@@ -17,7 +17,7 @@ func _on_spawn_timer_timeout():
 		ceil(Game.dingyFunny)
 
 		for i in range(randi_range(10+Game.dingyFunny,51 + Game.dingyFunny)):
-			print(i)
+			print("Dingy spawn i:" + str(i))
 			randomize()
 			var x = randi() % packed_scene.size()
 			location.x = randi_range(-260,280)

@@ -1,17 +1,21 @@
 extends CanvasLayer
-
 @onready var  UpgradeMenu = $UpgradeMenu
 
-"Upgrades"
+func _ready():
+	"Set upgrade menu button values"
+	$UpgradeMenu/ColorRect/UpgradeAttackButton.text = "Attack Damage: -$" + str(Game.atkDmgUpgradeCost)
+	$UpgradeMenu/ColorRect/SpeedUpgradeButton.text = "5 speed for -$" + str(Game.speedUpgradeCost)
+	$UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal " + str(Game.healAmount) + "HP for -$" + str(Game.healCost) 
+
+func _on_button_pressed():
+	Utils.saveGame()
+
+"Upgrades menu"
 func _on_upgrade_button_pressed():
 	UpgradeMenu.visible = true
 func _on_close_menu_pressed():
 	UpgradeMenu.visible = false
 
-func _on_button_pressed():
-	Utils.saveGame()
-
-"Upgrade Button!"
 func _on_upgrade_attack_button_pressed():
 	if (Game.money) >= Game.atkDmgUpgradeCost:
 		Game.money -= Game.atkDmgUpgradeCost
@@ -40,4 +44,4 @@ func _on_buy_health_button_pressed():
 
 		Game.playerHP += Game.healAmount
 
-	$UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal" + str(Game.healAmount) + "HP for -$" + str(Game.healCost) 
+	$UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal " + str(Game.healAmount) + "HP for -$" + str(Game.healCost) 
