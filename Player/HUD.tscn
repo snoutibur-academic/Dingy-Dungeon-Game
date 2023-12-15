@@ -7,7 +7,7 @@
 script/source = "extends Label
 
 func _process(delta):
-	self.text = \"HP: \" + str(Game.playerHP) + \" / \" + str(Game.playerMaxHP)
+	self.text = \"HP: \" + str(round(Game.playerHP))
 "
 
 [sub_resource type="GDScript" id="GDScript_yun2g"]
