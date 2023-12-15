@@ -36,7 +36,8 @@ func _process(delta):
 script/source = "extends Label
 
 func _process(delta):
-	self.text = \"SwordDmg: \" + str(Game.plrAtkDmg)
+	self.text = \"SwordDmg: \" + str(Game.plrAtkDmg) + \"\\n Speed: \" + str(Game.playerSpeed)
+	
 "
 
 [node name="HUD" type="CanvasLayer"]

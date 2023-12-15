@@ -6,7 +6,7 @@ var money = 0
 var plrAtkDmg = 1
 var atkDmgUpgradeCost = 10
 var healCost = 30
-var healAmount
+var healAmount = 5
 
 var playerSpeed = 15
 var speedUpgradeCost = 20
