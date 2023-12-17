@@ -29,7 +29,7 @@ func _process(delta):
 script/source = "extends Label
 
 func _process(delta):
-	self.text = \"$\" + str(Game.money)
+	self.text = \"$\" + str(round(Game.money))
 "
 
 [sub_resource type="GDScript" id="GDScript_t5vnu"]
