@@ -17,6 +17,7 @@ func saveGame():
 
 		"wave": Game.wave,
 		"dingyFunny": Game.dingyFunny,
+		"waveDifficultyMultiplier": Game.waveDifficultyMultiplier,
 
 		"speedUpgradeCost": Game.speedUpgradeCost,
 		"playerSpeed": Game.playerSpeed,
@@ -46,6 +47,7 @@ func loadGame():
 
 				Game.wave = curLine["wave"]
 				Game.dingyFunny = curLine["dingyFunny"]
+				Game.waveDifficultyMultiplier = curLine["waveDifficultyMultiplier"]
 
 				
 				Game.speedUpgradeCost = curLine["speedUpgradeCost"]
