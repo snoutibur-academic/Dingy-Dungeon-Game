@@ -8,10 +8,21 @@ func saveGame():
 
 	# Data to store
 	var data: Dictionary = {
-		"playerHP": Game.playerHP,
 		"money": Game.money,
+		
+		"playerHP": Game.playerHP,
+		
 		"plrAtkDmg": Game.plrAtkDmg,
-		"atkDmgUpgradeCost": Game.atkDmgUpgradeCost
+		"atkDmgUpgradeCost": Game.atkDmgUpgradeCost,
+
+		"wave": Game.wave,
+		"dingyFunny": Game.dingyFunny,
+
+		"speedUpgradeCost": Game.speedUpgradeCost,
+		"playerSpeed": Game.playerSpeed,
+
+		"healAmount": Game.healAmount,
+		"healCost": Game.healCost,
 	}
 
 	# Convert to json and write to saveFileR
@@ -26,8 +37,19 @@ func loadGame():
 		#if not saveFileR.eof_reached():
 			var curLine = JSON.parse_string(file.get_line())
 			if curLine:
-				Game.playerHP = curLine["playerHP"]
 				Game.money = curLine["money"]
+
+				Game.playerHP = curLine["playerHP"]
+
 				Game.plrAtkDmg = curLine["plrAtkDmg"]
 				Game.atkDmgUpgradeCost = curLine["atkDmgUpgradeCost"]
-		print("Save file loaded")
+
+				Game.wave = curLine["wave"]
+				Game.dingyFunny = curLine["dingyFunny"]
+
+				
+				Game.speedUpgradeCost = curLine["speedUpgradeCost"]
+				Game.playerSpeed = curLine["playerSpeed"]
+
+				Game.healAmount = curLine["healAmount"]
+				Game.healCost = curLine["healCost"]
