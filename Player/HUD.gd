@@ -7,6 +7,9 @@ func _ready():
 	$UpgradeMenu/ColorRect/SpeedUpgradeButton.text = "5 speed for -$" + str(Game.speedUpgradeCost)
 	$UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal " + str(Game.healAmount) + "HP for -$" + str(Game.healCost) 
 
+func _process(delta):
+	$UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal " + str(Game.healAmount) + "HP for -$" + str(Game.healCost)
+
 func _on_button_pressed():
 	Utils.saveGame()
 
@@ -43,5 +46,3 @@ func _on_buy_health_button_pressed():
 		Game.healAmount = Game.wave * 5
 
 		Game.playerHP += Game.healAmount
-
-	$UpgradeMenu/ColorRect/BuyHealthButton.text = "Heal " + str(Game.healAmount) + "HP for -$" + str(Game.healCost) 
