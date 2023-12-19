@@ -49,7 +49,6 @@ func loadGame():
 				Game.dingyFunny = curLine["dingyFunny"]
 				Game.waveDifficultyMultiplier = curLine["waveDifficultyMultiplier"]
 
-				
 				Game.speedUpgradeCost = curLine["speedUpgradeCost"]
 				Game.playerSpeed = curLine["playerSpeed"]
 
