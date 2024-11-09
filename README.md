@@ -1,4 +1,2 @@
-# dingus (Name has yet to be determined)
-A rouguelike game.
-
-You read the read me!
+# Dingy & The Dungeon
+The final project for our Game Development Fundamentals class.
