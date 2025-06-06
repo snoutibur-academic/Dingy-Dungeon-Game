@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://hj0lanaxubde"]
 
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="1_5xnaw"]
-[ext_resource type="Script" path="res://Player/HUD.gd" id="1_ecv5k"]
+[ext_resource type="Script" uid="uid://b4ip2knrtihyo" path="res://Player/HUD.gd" id="1_ecv5k"]
 
 [sub_resource type="GDScript" id="GDScript_47elf"]
 script/source = "extends Label

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cftxhxs5d7qr4"]
 
-[ext_resource type="Script" path="res://Mobs/Dingy.gd" id="1_01lvh"]
+[ext_resource type="Script" uid="uid://o5usabeahcxg" path="res://Mobs/Dingy.gd" id="1_01lvh"]
 [ext_resource type="Texture2D" uid="uid://eb0kt1tprik3" path="res://Textures/Dingy.png" id="2_wti8h"]
 [ext_resource type="AudioStream" uid="uid://ct12dy6ft6ac0" path="res://Soundz/DingyDeath.wav" id="3_vgrc2"]
 

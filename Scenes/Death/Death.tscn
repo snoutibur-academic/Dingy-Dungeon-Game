@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b24556k50wamc"]
 
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="1_l27x7"]
-[ext_resource type="Script" path="res://Scenes/Death/Death.gd" id="1_p40n7"]
+[ext_resource type="Script" uid="uid://btiwxpgi6etx1" path="res://Scenes/Death/Death.gd" id="1_p40n7"]
 
 [node name="Death" type="Node2D"]
 script = ExtResource("1_p40n7")

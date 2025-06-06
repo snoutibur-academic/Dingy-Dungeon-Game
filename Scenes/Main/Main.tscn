@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2758mxkkjegq"]
 
-[ext_resource type="Script" path="res://Scenes/Main/MainScene.gd" id="1_fobvs"]
+[ext_resource type="Script" uid="uid://b0qk3k5ps1prx" path="res://Scenes/Main/MainScene.gd" id="1_fobvs"]
 [ext_resource type="Theme" uid="uid://b2uy38s86fu5v" path="res://Theme/Main.tres" id="2_ngmpq"]
 [ext_resource type="AudioStream" uid="uid://dm3a68efuv545" path="res://Soundz/Theme_song_.mp3" id="3_0iakw"]
 
