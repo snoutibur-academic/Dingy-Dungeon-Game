@@ -1,7 +1,7 @@
 # Dingy & The Dungeon
 The final project for our Game Development Fundamentals class.
-Built with GoDot. No (working) executable has been released; you'll have to run it from inside GoDot.
 
+Currently, it's a minimum viable product with some art. Not much more than that, and probably never will be.
 ## Lore
-A swordfish mouse has escaped the testing facilities, and a bunch of mad scientist cats are after you.
+A swordfish mouse has escaped the testing facilities, and a bunch of mad scientist cats (that look like burritos) are after you.
 Fight them, or die. The game will get harder as the waves progress.
